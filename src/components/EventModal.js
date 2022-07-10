@@ -23,7 +23,7 @@ export default function EventModal() {
 			title,
 			description,
 			label: selectedLabel,
-			day: daySelected.valueOf(),
+			day: daySelected.valueOf(), // we store it as a number to be able to stringify for local storage
 			id: selectedEvent ? selectedEvent.id : Date.now(),
 		};
 		if (selectedEvent) {
@@ -35,10 +35,10 @@ export default function EventModal() {
 		setShowEventModal(false);
 	}
 	return (
-		<div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
-			<form className="bg-white rounded-lg shadow-2xl w-1/4">
-				<header className="bg-gray-100 px-4 py-2 flex justify-between items-center">
-					<span className="material-icons-outlined text-gray-400">
+		<div className="fixed top-0 left-0 flex items-center justify-center w-full h-screen">
+			<form className="w-1/4 bg-white rounded-lg shadow-2xl">
+				<header className="flex items-center justify-between px-4 py-2 bg-gray-100">
+					<span className="text-gray-400 material-icons-outlined">
 						drag_handle
 					</span>
 					<div>
@@ -51,20 +51,20 @@ export default function EventModal() {
 									});
 									setShowEventModal(false);
 								}}
-								className="material-icons-outlined text-gray-400 cursor-pointer"
+								className="text-gray-400 cursor-pointer material-icons-outlined"
 							>
 								delete
 							</span>
 						)}
 						<button onClick={() => setShowEventModal(false)}>
-							<span className="material-icons-outlined text-gray-400">
+							<span className="text-gray-400 material-icons-outlined">
 								close
 							</span>
 						</button>
 					</div>
 				</header>
 				<div className="p-3">
-					<div className="grid grid-cols-1/5 items-end gap-y-7">
+					<div className="grid items-end grid-cols-1/5 gap-y-7">
 						<div></div>
 						<input
 							type="text"
@@ -72,14 +72,14 @@ export default function EventModal() {
 							placeholder="Add title"
 							value={title}
 							required
-							className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
+							className="w-full pt-3 pb-2 text-xl font-semibold text-gray-600 border-0 border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-darkBlue"
 							onChange={(e) => setTitle(e.target.value)}
 						/>
-						<span className="material-icons-outlined text-gray-400">
+						<span className="text-gray-400 material-icons-outlined">
 							schedule
 						</span>
 						<p>{daySelected.format('dddd, MMMM DD')}</p>
-						<span className="material-icons-outlined text-gray-400">
+						<span className="text-gray-400 material-icons-outlined">
 							segment
 						</span>
 						<input
@@ -88,10 +88,10 @@ export default function EventModal() {
 							placeholder="Add a description"
 							value={description}
 							required
-							className="pt-3 border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
+							className="w-full pt-3 pb-2 text-gray-600 border-0 border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
 							onChange={(e) => setDescription(e.target.value)}
 						/>
-						<span className="material-icons-outlined text-gray-400">
+						<span className="text-gray-400 material-icons-outlined">
 							bookmark_border
 						</span>
 						<div className="flex gap-x-2">
@@ -102,7 +102,7 @@ export default function EventModal() {
 									className={`bg-${lblClass}-500 w-6 h-6 rounded-full flex items-center justify-center cursor-pointer`}
 								>
 									{selectedLabel === lblClass && (
-										<span className="material-icons-outlined text-white text-sm">
+										<span className="text-sm text-white material-icons-outlined">
 											check
 										</span>
 									)}
@@ -111,11 +111,11 @@ export default function EventModal() {
 						</div>
 					</div>
 				</div>
-				<footer className="flex justify-end border-t p-3 mt-5">
+				<footer className="flex justify-end p-3 mt-5 border-t">
 					<button
 						type="submit"
 						onClick={handleSubmit}
-						className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded text-white"
+						className="px-6 py-2 text-white rounded bg-darkBlue hover:bg-lightBlue"
 					>
 						Save
 					</button>

@@ -17,23 +17,23 @@ const CalendarHeader = () => {
 	};
 
 	return (
-		<header className="px-4 py-2 flex items-center">
-			<img src={logo} alt="calendar" className="mr-2 w-12 h-12" />
-			<h1 className="mr-10 text-xl text-gray-500 font-bold">Calendar</h1>
-			<button className="border rounded py-2 px-4 mr-5" onClick={handleReset}>
+		<header className="flex items-center px-4 py-2">
+			<img src={logo} alt="calendar" className="w-12 h-12 mr-2" />
+			<h1 className="mr-10 text-xl font-bold text-gray-500">Calendar</h1>
+			<button className="px-4 py-2 mr-5 border rounded" onClick={handleReset}>
 				Today
 			</button>
 			<button onClick={() => setMonthIndex(monthIndex - 1)}>
-				<span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
+				<span className="mx-2 text-gray-600 cursor-pointer material-icons-outlined">
 					chevron_left
 				</span>
 			</button>
 			<button onClick={() => setMonthIndex(monthIndex + 1)}>
-				<span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
+				<span className="mx-2 text-gray-600 cursor-pointer material-icons-outlined">
 					chevron_right
 				</span>
 			</button>
-			<h2 className="ml-4 text-xl text-gray-500 font-bold">
+			<h2 className="ml-4 text-xl font-bold text-gray-500">
 				{dayjs(new Date(dayjs().year(), monthIndex)).format('MMMM YYYY')}
 			</h2>
 		</header>
