@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/template-calendar_app-reactjs_tailwindcss/static/css/main.ab01ec56.css",
+    "main.js": "/template-calendar_app-reactjs_tailwindcss/static/js/main.bea87c37.js",
+    "static/js/787.5e05016b.chunk.js": "/template-calendar_app-reactjs_tailwindcss/static/js/787.5e05016b.chunk.js",
+    "static/media/calendar-icon.png": "/template-calendar_app-reactjs_tailwindcss/static/media/calendar-icon.2f7667a0573b93059032.png",
+    "index.html": "/template-calendar_app-reactjs_tailwindcss/index.html",
+    "static/media/plus.svg": "/template-calendar_app-reactjs_tailwindcss/static/media/plus.fa5e337a008e4267a7b9b67d03d31898.svg",
+    "main.ab01ec56.css.map": "/template-calendar_app-reactjs_tailwindcss/static/css/main.ab01ec56.css.map",
+    "main.bea87c37.js.map": "/template-calendar_app-reactjs_tailwindcss/static/js/main.bea87c37.js.map",
+    "787.5e05016b.chunk.js.map": "/template-calendar_app-reactjs_tailwindcss/static/js/787.5e05016b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab01ec56.css",
+    "static/js/main.bea87c37.js"
+  ]
+}
